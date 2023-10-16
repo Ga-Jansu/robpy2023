@@ -352,8 +352,10 @@ def __eixo_reta_12_np(po1: np.ndarray, vs1: np.ndarray, po2: np.ndarray, vs2: np
     :param vs2: Vetor orientação da reta 1
     :return: vetor unitário que aponta da reta 1 à reta 2
     """
-    pass
-
+    e = produto_vetorial(vs1,vs2)
+    e = e/norma_vetor(e)
+    d = po2 - po1
+    return e * np.sign(produto_escalar(d,e))
 
 def __eixo_reta_12_p(po1: np.ndarray, po2: np.ndarray, vs: np.ndarray) -> float:
     """
