@@ -2,9 +2,7 @@
 import numpy as np
 import RobPy as rp
 
-M = rp.matriz_rotacao_x(43*np.pi/180)
-r = rp.cria_vetor3([2,3,1])
+v1 = rp.cria_vetor3([1,0,0])
+v2 = rp.cria_vetor3([0,1,0])
 
-T = rp.cria_operador4(m_rot_b_a=M,v_o_a=r)
-
-print(T)
+print(rp.ang_vetores(v2,v1) * 180 / np.pi)
